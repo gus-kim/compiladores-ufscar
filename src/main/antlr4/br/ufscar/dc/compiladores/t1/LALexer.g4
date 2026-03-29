@@ -1,9 +1,5 @@
 lexer grammar LALexer;
 
-@header {
-package br.ufscar.dc.compiladores.t1;
-}
-
 // Palavras-chave exigidas pela linguagem LA
 T_ALGORITMO : 'algoritmo' ;
 T_DECLARE   : 'declare' ;
