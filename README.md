@@ -1,17 +1,28 @@
-# Analisador Léxico - Linguagem Algorítmica (LA)
-**Disciplina:** Construção de Compiladores (Prof. Daniel Lucrédio)
-**Membros do Grupo:** Gustavo Kim Alcantara - 820763
+# Projeto de Compiladores - UFSCar (Linguagem LA)
 
-## Requisitos
-- **Java Development Kit (JDK):** Versão 11 ou superior
-- **Apache Maven:** Versão 3.6 ou superior
+Este repositório contém o desenvolvimento completo do compilador para a **Linguagem Algorítmica (LA)**, realizado durante a disciplina de Construção de Compiladores na UFSCar, sob orientação do Prof. Dr. Daniel Lucrédio.
 
-## Como Compilar o Projeto
-Abra o terminal na pasta raiz do projeto (onde está o `pom.xml`) e execute o comando:
-`mvn clean package`
+O projeto é construído em Java, utilizando **ANTLR4** para a geração de analisadores e **Maven** para automação de build e gerenciamento de dependências.
 
-Isso gerará o analisador léxico dentro da pasta `target/`, em um arquivo nomeado `t1-1.0-SNAPSHOT-jar-with-dependencies.jar`.
+## 📂 Estrutura do Projeto
 
-## Como Executar
-Use o comando abaixo no terminal, passando o arquivo de entrada e o arquivo de saída desejado:
-`java -jar target/t1-1.0-SNAPSHOT-jar-with-dependencies.jar <caminho_arquivo_entrada> <caminho_arquivo_saida>`
+O repositório está estruturado em módulos independentes que representam as etapas do compilador:
+
+* **[/t1](./t1)**: **Analisador Léxico** - Tokenização e tratamento de erros de símbolos, cadeias e comentários. (Concluído ✅)
+* **[/t2](./t2)**: **Analisador Sintático** - (Em desenvolvimento)
+* **[/t3](./t3)**: **Analisador Semântico** - (Em breve)
+* **[/t4](./t4)**: **Gerador de Código** - (Em breve)
+* **[/t5](./t5)**: **Otimização** - (Em breve)
+
+## 🛠️ Tecnologias e Ferramentas
+
+* **Linguagem:** Java 11+
+* **Gerador de Analisadores:** ANTLR 4.11.1
+* **Gerenciador de Dependências:** Maven
+* **Ambiente de Desenvolvimento:** GitHub Codespaces
+
+## 👤 Autor
+
+* **Nome:** Gustavo Kim
+* **RA:** 820763
+* **Instituição:** Universidade Federal de São Carlos (UFSCar)

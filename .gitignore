@@ -1,0 +1,17 @@
+# Pasta de build do Maven
+target/
+
+# Arquivos temporários do corretor
+temp/
+saida.txt
+teste.txt
+
+# Ferramentas externas e testes do professor
+*.jar
+casos-de-teste/
+
+# Configurações do VS Code / Codespaces
+.vscode/
+.settings/
+.classpath
+.project
