@@ -1,63 +1,67 @@
-package br.ufscar.dc.compiladores.t1; // Adicionado para alinhar com sua estrutura de pastas
+package br.ufscar.dc.compiladores.t1;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.Token;
-import java.io.PrintWriter;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-/*
- * Classe Principal Adaptada:
- * - Nomenclaturas de erro sincronizadas com seu Lexer funcional.
- * - Mensagens de erro limpas (sem a palavra "literal").
- * - Estrutura de pacotes compatível com ambiente UFSCar/Maven.
- */
 public class Principal {
+
     public static void main(String[] args) {
-        // Validação básica de argumentos
-        if (args.length < 2) {
-            return;
-        }
+        if (args.length < 2) return;
 
-        // Uso de FileWriter dentro do PrintWriter para garantir a escrita correta no disco
-        try (PrintWriter pw = new PrintWriter(new FileWriter(args[1]))) {
-            CharStream cs = CharStreams.fromFileName(args[0]);
-            LALexer lexer = new LALexer(cs);
+        String arquivoEntrada = args[0];
+        String arquivoSaida = args[1];
 
-            Token t;
-            while ((t = lexer.nextToken()).getType() != Token.EOF) {
-                String nomeToken = LALexer.VOCABULARY.getSymbolicName(t.getType());
-                String textoToken = t.getText();
+        try (PrintWriter escritor = new PrintWriter(arquivoSaida)) {
+            CharStream input = CharStreams.fromFileName(arquivoEntrada);
+            LALexer analisador = new LALexer(input);
+            
+            boolean erroDetectado = false;
 
-                // --- TRATAMENTO DE ERROS (Sincronizado com seu Lexer) ---
-                
-                if (nomeToken.equals("ERRO_SIMBOLO")) {
-                    pw.println("Linha " + t.getLine() + ": " + textoToken + " - simbolo nao identificado");
-                    break; 
-                } 
-                else if (nomeToken.equals("ERRO_CADEIA")) { // Nome que roda na sua máquina
-                    pw.println("Linha " + t.getLine() + ": cadeia literal nao fechada");
-                    break;
-                } 
-                else if (nomeToken.equals("ERRO_COMENTARIO")) { // Nome que roda na sua máquina
-                    pw.println("Linha " + t.getLine() + ": comentario nao fechado");
-                    break;
-                }
+            while (!erroDetectado) {
+                Token objetoToken = analisador.nextToken();
+                String tipoToken = LALexer.VOCABULARY.getSymbolicName(objetoToken.getType());
+                String lexema = objetoToken.getText();
 
-                // --- FORMATAÇÃO DE TOKENS REGULARES ---
+                // Final do arquivo
+                if (objetoToken.getType() == Token.EOF) break;
 
-                if (nomeToken.equals("IDENT") || nomeToken.equals("CADEIA") ||
-                    nomeToken.equals("NUM_INT") || nomeToken.equals("NUM_REAL")) {
-                    // Saída para tipos variáveis: <'valor',TIPO>
-                    pw.println("<'" + textoToken + "'," + nomeToken + ">");
+                // Verificação de Erros Lexicais
+                if (tipoToken.startsWith("ERRO")) {
+                    escritor.println(formatarMensagemErro(tipoToken, objetoToken, lexema));
+                    erroDetectado = true; // Interrompe a análise conforme o padrão do T1
                 } else {
-                    // Saída para palavras-chave e símbolos: <'valor','valor'>
-                    pw.println("<'" + textoToken + "','" + textoToken + "'>");
+                    // Formatação de Tokens válidos
+                    escritor.println(formatarTokenValido(tipoToken, lexema));
                 }
             }
-        } catch (IOException e) {
-            System.err.println("Erro ao manipular arquivos: " + e.getMessage());
+        } catch (IOException ex) {
+            System.err.println("Falha na leitura/escrita: " + ex.getMessage());
         }
+    }
+
+    private static String formatarMensagemErro(String tipo, Token t, String texto) {
+        int linha = t.getLine();
+        switch (tipo) {
+            case "ERRO_SIMBOLO":
+                return "Linha " + linha + ": " + texto + " - simbolo nao identificado";
+            case "ERRO_CADEIA":
+                return "Linha " + linha + ": cadeia literal nao fechada";
+            case "ERRO_COMENTARIO":
+                return "Linha " + linha + ": comentario nao fechado";
+            default:
+                return "Linha " + linha + ": erro desconhecido";
+        }
+    }
+
+    private static String formatarTokenValido(String tipo, String texto) {
+        // Categorias que exibem o nome do tipo (IDENT, CADEIA, NUMeros)
+        if (tipo.equals("IDENT") || tipo.equals("CADEIA") || tipo.startsWith("NUM_")) {
+            return "<'" + texto + "'," + tipo + ">";
+        }
+        // Palavras reservadas e operadores exibem o próprio texto duas vezes
+        return "<'" + texto + "','" + texto + "'>";
     }
 }
