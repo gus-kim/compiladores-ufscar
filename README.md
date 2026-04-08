@@ -9,7 +9,7 @@ O projeto é construído em Java, utilizando **ANTLR4** para a geração de anal
 O repositório está estruturado em módulos independentes que representam as etapas do compilador:
 
 * **[/t1](./t1)**: **Analisador Léxico** - Tokenização e tratamento de erros de símbolos, cadeias e comentários. (Concluído ✅)
-* **[/t2](./t2)**: **Analisador Sintático** - (Em desenvolvimento)
+* **[/t2](./t2)**: **Analisador Sintático** - Verificação estrutural do código-fonte e validação das regras da Gramática Livre de Contexto (GLC). (Concluído ✅)
 * **[/t3](./t3)**: **Analisador Semântico** - (Em breve)
 * **[/t4](./t4)**: **Gerador de Código** - (Em breve)
 * **[/t5](./t5)**: **Otimização** - (Em breve)

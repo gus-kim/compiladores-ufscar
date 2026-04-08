@@ -51,7 +51,7 @@ O projeto foi validado utilizando o script de correção oficial da disciplina.
 Para rodar a bateria de 37 testes (assumindo que o corretor e os testes estejam no diretório pai, fora da pasta `t1`):
 
 ```bash
-java -jar ../compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar target/t1-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc ../temp ../casos-de-teste "820763" t1
+java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.jar "java -jar t1/target/t1-1.0-SNAPSHOT-jar-with-dependencies.jar" gcc temp casos-de-teste "820763" t1
 ```
 
 ---
