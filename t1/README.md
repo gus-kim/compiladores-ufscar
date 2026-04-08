@@ -66,6 +66,6 @@ java -jar compiladores-corretor-automatico-1.0-SNAPSHOT-jar-with-dependencies.ja
 
 ## 👤 Autor
 
-* **Nome:** Gustavo Kim
+* **Nome:** Gustavo Kim Alcantara
 * **RA:** 820763
-* **Instituição:** UFSCar
+* **Instituição:** UFSCar (Turma de quarta)

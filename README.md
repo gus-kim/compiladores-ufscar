@@ -21,8 +21,8 @@ O repositório está estruturado em módulos independentes que representam as et
 * **Gerenciador de Dependências:** Maven
 * **Ambiente de Desenvolvimento:** GitHub Codespaces
 
-## 👤 Autor
+## 👥 Autores
 
-* **Nome:** Gustavo Kim
-* **RA:** 820763
-* **Instituição:** Universidade Federal de São Carlos (UFSCar)
+Como a composição do grupo pode variar ao longo das fases do compilador, a autoria detalhada está documentada individualmente. 
+
+*Por favor, verifique a seção de autores no arquivo `README.md` dentro da pasta de cada trabalho (T1, T2, etc.) para consultar os nomes e RAs correspondentes.*
