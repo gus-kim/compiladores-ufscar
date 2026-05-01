@@ -10,7 +10,7 @@ O repositório está estruturado em módulos independentes que representam as et
 
 * **[/t1](./t1)**: **Analisador Léxico** - Tokenização e tratamento de erros de símbolos, cadeias e comentários. (Concluído ✅)
 * **[/t2](./t2)**: **Analisador Sintático** - Verificação estrutural do código-fonte e validação das regras da Gramática Livre de Contexto (GLC). (Concluído ✅)
-* **[/t3](./t3)**: **Analisador Semântico** - (Em breve)
+* **[/t3](./t3)**: **Analisador Semântico** - Validação de tipos, checagem de escopo com tabela de símbolos e identificação de atribuições incompatíveis. (Concluído ✅)
 * **[/t4](./t4)**: **Gerador de Código** - (Em breve)
 * **[/t5](./t5)**: **Otimização** - (Em breve)
 
@@ -23,6 +23,6 @@ O repositório está estruturado em módulos independentes que representam as et
 
 ## 👥 Autores
 
-Como a composição do grupo pode variar ao longo das fases do compilador, a autoria detalhada está documentada individualmente. 
+Como a composição do grupo pode variar ao longo das fases do compilador, a autoria detalhada está documentada individualmente em cada pasta. 
 
-*Por favor, verifique a seção de autores no arquivo `README.md` dentro da pasta de cada trabalho (T1, T2, etc.) para consultar os nomes e RAs correspondentes.*
+*Por favor, verifique a seção de autores no arquivo `README.md` dentro da pasta de cada trabalho (t1, t2, etc.) para consultar os nomes e RAs correspondentes.*
