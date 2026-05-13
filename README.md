@@ -10,9 +10,9 @@ O repositório está estruturado em módulos independentes que representam as et
 
 * **[/t1](./t1)**: **Analisador Léxico** - Tokenização e tratamento de erros de símbolos, cadeias e comentários. (Concluído ✅)
 * **[/t2](./t2)**: **Analisador Sintático** - Verificação estrutural do código-fonte e validação das regras da Gramática Livre de Contexto (GLC). (Concluído ✅)
-* **[/t3](./t3)**: **Analisador Semântico** - Validação de tipos, checagem de escopo com tabela de símbolos e identificação de atribuições incompatíveis. (Concluído ✅)
-* **[/t4](./t4)**: **Gerador de Código** - (Em breve)
-* **[/t5](./t5)**: **Otimização** - (Em breve)
+* **[/t3](./t3)**: **Analisador Semântico (Parte 1)** - Validação de tipos, checagem de escopo com tabela de símbolos e identificação de atribuições incompatíveis básicas. (Concluído ✅)
+* **[/t4](./t4)**: **Analisador Semântico (Parte 2)** - Validação avançada suportando funções, procedimentos, ponteiros, registros (structs) e compatibilidade estrita de argumentos. (Concluído ✅)
+* **[/t5](./t5)**: **Otimização e Geração de Código** - (Em breve)
 
 ## 🛠️ Tecnologias e Ferramentas
 
