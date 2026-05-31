@@ -12,13 +12,14 @@ O repositório está estruturado em módulos independentes que representam as et
 * **[/t2](./t2)**: **Analisador Sintático** - Verificação estrutural do código-fonte e validação das regras da Gramática Livre de Contexto (GLC). (Concluído ✅)
 * **[/t3](./t3)**: **Analisador Semântico (Parte 1)** - Validação de tipos, checagem de escopo com tabela de símbolos e identificação de atribuições incompatíveis básicas. (Concluído ✅)
 * **[/t4](./t4)**: **Analisador Semântico (Parte 2)** - Validação avançada suportando funções, procedimentos, ponteiros, registros (structs) e compatibilidade estrita de argumentos. (Concluído ✅)
-* **[/t5](./t5)**: **Otimização e Geração de Código** - (Em breve)
+* **[/t5](./t5)**: **Gerador de Código (Tradução)** - Orquestrador final que recebe a AST sem erros e utiliza o padrão *Visitor* para emitir código C válido e compilável com o GCC. (Concluído ✅)
 
 ## 🛠️ Tecnologias e Ferramentas
 
 * **Linguagem:** Java 11+
 * **Gerador de Analisadores:** ANTLR 4.11.1
-* **Gerenciador de Dependências:** Maven
+* **Compilador Alvo:** GCC (GNU Compiler Collection)
+* **Gerenciador de Dependências:** Apache Maven
 * **Ambiente de Desenvolvimento:** GitHub Codespaces
 
 ## 👥 Autores
